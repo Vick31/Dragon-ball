@@ -275,7 +275,7 @@ function mostrar_ganador() {
 
             setTimeout(() => {
                 $('#muerte1').css('display', 'block')
-            }), 1000;
+            }, 1000);
 
             $('#a1').css('display', 'block');
 
@@ -294,7 +294,7 @@ function mostrar_ganador() {
 
             setTimeout(() => {
                 $('#muerte2').css('display', 'block');
-            }), 1000;
+            }, 1000);
 
             $('#a2').css('display', 'block');
             $('#a2').css({ animation: ' explosion 1s ease-in' });
@@ -314,7 +314,7 @@ function mostrar_ganador() {
             setTimeout(() => {
                 $('#muerte1').css('display', 'block')
                 $('#muerte2').css('display', 'block')
-            }), 1000;
+            }, 1000);
 
             $('#gallo1').css('display', 'none');
             $('#gallo2').css('display', 'none');
