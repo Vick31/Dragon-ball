@@ -278,7 +278,6 @@ function mostrar_ganador() {
             }, 1000);
 
             $('#a1').css('display', 'block');
-
             $('#a1').css({ animation: ' explosion 1s ease-in' });
 
             $('#a1').on('animationend', function () {
