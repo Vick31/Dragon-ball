@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PELEAS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="row">
+
+        <div class="col s6">
+            <img src="./img/PGnZy.gif" id="gallo1" alt="">
+            <p id="num-vida1"></p>
+            <img src="./img/muerte.png" id="muerte1" alt="">
+            <div class="barra">
+                <p>KAKAROTO</p>
+                <div class="fondo-barra" id="f1">
+                    <p id="p-vida1">100 %</p>
+                    <div class="barra-vida" id="v1"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s6">
+            <img src="./img/vegeta_12.gif" id="gallo2" alt="">
+            <p id="num-vida2"></p>
+            <img src="./img/muerte.png" id="muerte2" alt="">
+            <div class="barra">
+                <p>VEGETA</p>
+                <div class="fondo-barra" id="f2">
+                    <p id="p-vida2">100 %</p>
+                    <div class="barra-vida" id="v2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="empate" id="em">
+        <h1>
+            TIE
+        </h1>
+    </div>
+    <div class="win1" id="vi1">
+        <h1>
+            WINNER KAKAROTO
+        </h1>
+    </div>
+    <div class="win2" id="vi2">
+        <h1>
+            WINNER VEGETA
+        </h1>
+    </div>   
+                
+    <h2 id="inicio">GO!</h2>
+
+    <img src="./img/golpe.png" alt="" id="pow">
+    <img src="./img/golpe.png" alt="" id="pow1">
+    <img src="./img/golpe.png" alt="" id="pow2">
+
+    <div id="a1">
+    </div>
+    <div id="a2">
+    </div>
+
+    <audio src="./audio/rasengan.mp3" id="rasengan"></audio>
+    <audio src="./audio/powerup.mp3" id="powerup"></audio>
+    <audio src="./audio/opening.mp3" id="opening"></audio>
+    <audio src="./audio/victoria.mp3" id="victoria"></audio>
+    <audio src="./audio/triste.mp3" id="triste"></audio>
+    <audio src="./audio/Golpe.mp3" id="golpe"></audio>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

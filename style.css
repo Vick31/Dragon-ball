@@ -1,0 +1,532 @@
+
+* {
+    margin: 0; 
+    padding: 0;
+    ;
+}
+.row{
+    width: 100vw;
+    height: 100vh;
+    background-image: url(./img/fondo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+
+}
+.col {
+    position: relative;
+    width: 50vw;
+}
+#inicio {
+    position: absolute; 
+    left: calc(50vw - 5rem);
+    top: calc(80% - 5rem);
+    width: 10rem;
+    height: 8rem;
+    border-radius: 100%;
+    border: 0.2rem solid rgb(245, 75, 75);
+    background: red;
+    text-align: center;
+    padding-top: 2rem;
+    font-size: 5rem;
+    box-shadow: 1px 1px 23px rgba(255, 253, 253, 0.9);
+    text-shadow: 1px 1px 5px rgb(0, 0, 0, 0.4);
+    color: white;
+    z-index: 2;
+    font-family: arial,sans-serif;
+
+    animation-name: btn;
+    animation-duration: 1s;
+}
+#inicio:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+#gallo1{
+    width: 15rem;
+    height: 20rem;
+    transform: scale(-1, 1);
+    position: absolute;
+    bottom: calc(20% - 1rem);
+    left: 45%;
+}
+#gallo2{
+    width: 22rem;
+    height: 25rem;
+    position: absolute;
+    bottom: calc(20% - 2rem);
+    right: 45%;
+}
+#muerte1{
+    width: 10rem;
+    height: 10rem;
+    position: absolute;
+    bottom: calc(23% - 2rem);
+    left: 25rem;
+    display: none;
+
+    animation-name: rip;
+    animation-duration: 400ms;
+}
+#muerte2{
+    width: 10rem;
+    height: 10rem;
+    position: absolute;
+    bottom: calc(23% - 1rem);
+    right: 25rem;
+    display: none;
+
+    animation-name: rip;
+    animation-duration: 400ms;
+}
+#a1 {
+    position: absolute;
+    left: 25rem;
+    bottom: 20%;
+    display: none;
+}
+#a2 {
+    position: absolute;
+    right: 25rem;
+    bottom: 20%;
+    display: none;
+}
+.barra{
+    position: absolute;
+    top: 0;
+    left:5rem;
+    width: 80%;
+    box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.8);
+    
+}
+.fondo-barra {
+    position: absolute;
+    top: 2.5rem;
+    background-color: rgb(100, 5, 5);
+    width: 100%;
+    height: 2rem;    
+    border: 2px solid red;
+    border-radius: 13px;
+}   
+.barra-vida {
+    position: absolute;
+    background-color: rgb(212, 255, 20);
+    height: 2rem;
+    width: 100%;
+    transition: 300ms all ease-in-out;
+    border-radius: 10px;
+}
+.barra p {
+    color: rgb(167, 0, 0);
+    font-size: 2rem;
+    text-shadow: 1px 1px 4px rgb(230, 217, 217);    
+    position: absolute;    
+    top: 5rem;
+    font-family: fuente;
+}
+#p-vida1, #p-vida2 {
+    top: 2.5rem;
+    right: 1px;
+}
+#vi1, #vi2, #em{
+    background: rgb(0, 0, 0, 0.5);
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: none;
+}
+#vi1 h1, #vi2 h1, #em h1 {
+    position: relative;
+    text-align: center;
+    width: 70rem;
+    top: 12vh;
+    left: calc(50vw - 35rem);
+    font-size: 7rem; 
+    color: rgb(189, 252, 72);
+    text-shadow: 2px 2px 10px rgb(75, 139, 1);
+    font-family: fuente2;
+
+    animation-name: animation;
+    animation-duration: 1s;
+}
+#num-vida1 {
+    position: absolute;
+    top: 50%;
+    left: 68%;
+    font-size: 2rem;
+    color: rgb(161, 29, 29);
+    font-family: fuente2;
+    text-shadow: 2px 2px 20px rgb(255, 255, 255);
+    display: none; 
+    transition: 300ms all ease-in-out;
+    animation-name: slide;
+    animation-duration: 1s;
+}
+#num-vida2 {
+    position: absolute;
+    top: 50%;
+    right: 75%;
+    font-size: 2rem;
+    color: rgb(161, 29, 29);
+    font-family: fuente2;
+    text-shadow: 2px 2px 20px rgb(255, 255, 255);
+    display: none;
+    transition: 300ms all ease-in-out;
+    animation-name: slide;
+    animation-duration: 1s;
+}
+#pow {
+    position: absolute;
+    bottom: calc(30% - 2rem);
+    left: calc(50% - 5rem);
+    width: 11rem;
+    height: 9rem;
+    display: none;
+}
+#pow1 {
+    position: absolute;
+    bottom: calc(30% - 2rem);
+    left: 19%;
+    width: 11rem;
+    height: 9rem;
+    display: none;
+}
+#pow2 {
+    position: absolute;
+    bottom: calc(30% - 2rem);
+    right: 23%;
+    width: 11rem;
+    height: 9rem;
+    display: none;
+}
+@font-face {
+    font-family: fuente;
+    src: url(./font/The\ Hound.ttf);
+}
+@font-face {
+    font-family: fuente2;
+    src: url(./font/Vandalism.ttf);
+}
+@font-face {
+    font-family: fuente3;
+    src: url(./font/Yearbook.ttf);
+}
+
+@keyframes picotazo1 {
+    0% {
+        content: url(./img/patada.gif);
+        transform:translate(0);
+    }
+
+    50% {
+        transform: translate(22vw);
+    }
+    100% {
+        transform: translate(0);
+    }
+}
+@keyframes picotazo2 {
+    0% {
+        transform:translate(0) scale(-1, 1);
+        content: url(./img/vegeta_34.gif);
+        width: 30rem;
+        height: 35rem;
+    }
+    40% {
+        width: 30rem;
+        height: 35rem;
+        transform: translate(-22vw) scale(-1, 1);
+    }
+    98% {
+        width: 30rem;
+        height: 35rem;
+        transform: translate(-22vw) scale(-1, 1);
+    }
+    100% {
+        width: 22rem;
+        height: 25rem;
+        transform: translate(0)
+    }
+}
+
+@keyframes espuelazo1 {
+    0% {
+        content: url(./img/cameha.gif);
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(22vw);
+    }
+    50% {
+        transform: translate(22vw);
+    }
+    80% {
+        transform: translate(22vw);
+    }
+    100% {
+        transform: translate(22vw);
+    }
+}
+@keyframes espuelazo2 {
+    0% {
+        content: url(./img/vegeta_35.gif);
+        transform: translate(0) scale(-1, 1);
+        height: 30rem;
+        width: 40rem;
+    }
+    50% {
+        transform: translate(-22vw) scale(-1, 1);
+        height: 30rem;
+        width: 40rem;
+    }
+    100% {
+        transform: translate(0) scale(-1, 1);
+        width: 22rem;
+        height: 25rem;
+    } 
+}
+
+@keyframes fatality1 {
+    0% {
+        content: url(./img/pixlr-bg-result.png);
+        transform:translate(0) scale(-1, 1);
+    }
+    30% {
+        transform: translate(30vw, -20rem) scale(-1, 1) rotateZ(90000deg);
+    }
+    40% {
+        transform: translate(30vw) scale(-1, 1) rotateZ(90000deg);
+    }
+    100% {
+        transform: translate(1rem) scale(-1, 1) rotateZ(90000deg);
+    }
+}
+@keyframes fatality2 {
+    0% {
+        content: url(./img/pixlr-bg-result.png);
+        transform:translate(0);
+    }
+    30% {
+        transform: translate(-30vw, -20rem) rotateZ(90000deg);
+    }
+    40% {
+        transform: translate(-30vw) rotateZ(90000deg);
+    }
+    100% {
+        transform: translate(1rem) rotateZ(90000deg);
+    }
+}
+
+@keyframes defiende1 {
+    0% {
+        content: url(./img/PGnZy.gif);
+        transform:translate(0) scale(-1, 1);
+    }
+    50% {
+        transform: translate(-3rem)scale(-1, 1);
+    }
+    100% {
+        transform: translate(0) scale(-1, 1);
+    }
+}
+@keyframes defiende2 {
+    0% {
+        content: url(./img/vegeta_12.gif);
+        transform:translate(0);
+    }
+    50% {
+        transform: translate(3rem);
+    }
+    100% {
+        transform: translate(0);
+    }
+}
+
+@keyframes esquiva1 {
+    0% {
+        content: url(./img/PGnZy.gif);
+        transform:translate(0) scale(-1, 1);
+    }
+    50% {
+        transform: translateY(-17rem) scale(-1, 1);
+    }
+    100% {
+        transform: translate(0) scale(-1, 1);
+    }
+}
+@keyframes esquiva2 {
+    0% {
+        content: url(./img/vegeta_12.gif);
+        transform:translate(0);
+    }
+    50% {
+        transform: translateY(-17rem);
+    }
+    100% {
+        transform: translate(0);
+    }
+}
+
+@keyframes esconde1 {
+    0% {
+        content: url(./img/PGnZy.gif);
+        transform:translate(0) scale(-1, 1);
+    }
+    50% {
+        transform: translate(0) rotateY(90deg);
+    }
+    100% {
+        transform: translate(0) scale(-1, 1);
+    }
+}
+@keyframes esconde2 {
+    0% {
+        content: url(./img/vegeta_12.gif);
+        transform:translate(0);
+    }
+    50% {
+        transform: translate(0) rotateY(90deg);
+    }
+    100% {
+        transform: translate(0);
+    }
+}
+
+@keyframes powerup1 {
+    0% {
+        content: url(./img/vida.gif);
+        transform:translate(0);
+    }
+    100% {
+        transform:translate(0);
+    }
+}
+@keyframes powerup2 {
+    0% {
+        content: url(./img/vegeta_17.gif);
+        transform:translate(0);
+    }
+    100% {
+        transform:translate(0);
+    }
+}
+
+@-webkit-keyframes animation {
+    0% {
+      letter-spacing: -0.5em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+@keyframes animation {
+    0% {
+      letter-spacing: -0.5em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+@-webkit-keyframes btn {
+    0% {
+        -webkit-transform: translateY(-10rem);
+                transform: translateY(-10rem);
+    }
+    100% {
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+    }
+}
+@keyframes btn {
+    0% {
+        -webkit-transform: translateY(-10rem);
+                transform: translateY(-10rem);
+    }
+    100% {
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+    }
+}
+@-webkit-keyframes rip {
+    0% {
+        -webkit-transform: translateY(-25rem);
+                transform: translateY(-25rem);
+    }
+    100% {
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+    }
+}
+@keyframes rip {
+    0% {
+        -webkit-transform: translateY(-25rem);
+                transform: translateY(-25rem);
+    }
+    100% {
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+    }
+}
+@-webkit-keyframes slide {
+    0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    }
+    100% {
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+    }
+}
+@keyframes slide {
+    0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    }
+    100% {
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+    }
+}
+@keyframes shake {
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
+    }
+  
+    30%, 50%, 70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+  
+    40%, 60% {
+      transform: translate3d(4px, 0, 0);
+    }
+}
+@keyframes explosion {
+    0%{
+      content: url(./img/explosion.gif);
+    }
+    50%{
+        transform: translateY(-1px);
+    }
+    100%{
+      
+    }
+}
+
+
+  
